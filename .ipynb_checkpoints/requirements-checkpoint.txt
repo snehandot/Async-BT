@@ -1,0 +1,9 @@
+backtesting
+pandas
+numpy
+requests
+python-binance
+matplotlib
+keyboard
+ta
+mplfinance

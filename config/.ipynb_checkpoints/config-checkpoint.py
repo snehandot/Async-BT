@@ -1,0 +1,5 @@
+API_KEY = "kFKTjhE7BXfnO29MK2EeHFrkhGc7QDVCHYIyrj6MvAUiVns7swe4abgq6LHcmaMR"
+API_SECRET = "RCYkn1a1CSiARylQiCDwytCEkirCOzNTLDgeZSCl8e2sIBsiL0EuoSDVCPuIXkAa"
+SYMBOL = "BTCUSDT"
+TRADE_QTY = 0.000001
+BASE_URL = "https://testnet.binance.vision/api"

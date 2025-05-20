@@ -1,0 +1,4 @@
+Timestamp,Direction,Entry Price,Exit Price,Size,PnL,Source
+2025-05-12 15:14:24.383672,SELL,104525.35,,0.001,,live_executor
+2025-05-12 15:14:29.741536,SELL,104512.02,,0.001,,live_executor
+2025-05-12 15:14:36.475991,SELL,104517.0,,0.001,,live_executor
