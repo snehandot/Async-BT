@@ -1,6 +1,7 @@
 from binance.client import Client
 from config.config import API_KEY, API_SECRET, BASE_URL
-
+from coinbase.rest import RESTClient
+from json import dumps
 
 class Broker:
     def __init__(self):
@@ -47,3 +48,29 @@ class Broker:
         }, inplace=True)
     
         return df[['Open', 'High', 'Low', 'Close', 'Volume']]
+
+        
+class Coinbase:
+    def __init__(self):
+        self.client = RESTClient(api_key=api_key, api_secret=api_secret,base_url="https://api-sandbox.coinbase.com/api/v3/brokerage/orders")
+        self.accounts = self.client.get_accounts()
+        print(dumps(accounts.to_dict(), indent=2))
+    def order(self,symbol,side,quantity):
+        if side=="BUY":
+            print("Bought")
+            order = client.preview_market_order_buy(
+            client_order_id="00234",
+            product_id="BTC-USD",
+            quote_size="10"
+             )
+        
+            if order['success']:
+                order_id = order['success_response']['order_id']
+                fills = client.get_fills(order_id=order_id)
+                print(json.dumps(fills.to_dict(), indent=2))
+            else:
+                error_response = order['error_response']
+                print(error_response)
+        else:
+            print("Sell")
+            pass

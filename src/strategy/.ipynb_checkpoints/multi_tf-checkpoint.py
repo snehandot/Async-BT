@@ -28,7 +28,7 @@ class MultiTFStrategy(Strategy):
         return 100 - (100 / (1 + rs))
 
 
-    def next(self):
+    def next(self,nos):
         val=self.data
         idx = len(val)
         # print(idx)
@@ -61,11 +61,11 @@ class MultiTFStrategy(Strategy):
                 self.buy(size=0.001)
                 self.last_trade_idx = idx
                 self.trades.append({'time':val.Close.index[-1],'action':'BUY','price':val.Close[-1],'size':0.001})
-                print("✓ BUY executed")
+                print(f"✓ BUY executed from STRAT:{nos}")
             elif price_down:
                 self.sell(size=0.001)
                 self.last_trade_idx = idx
                 self.trades.append({'time':val.Close.index[-1],'action':'SELL','price':val.Close[-1],'size':0.001})
-                print("✓ SELL executed")
+                print(f"✓ SELL executed from STRAT{nos}")
 
 
