@@ -1,5 +1,5 @@
 from binance.client import Client
-from config.config import API_KEY, API_SECRET, BASE_URL
+from config.config import API_KEY, API_SECRET, BASE_URL, CB_API_KEY , CB_API_SECRET
 from coinbase.rest import RESTClient
 from json import dumps
 
@@ -52,7 +52,7 @@ class Broker:
         
 class Coinbase:
     def __init__(self):
-        self.client = RESTClient(api_key=api_key, api_secret=api_secret,base_url="https://api-sandbox.coinbase.com/api/v3/brokerage/orders")
+        self.client = RESTClient(api_key=CB_API_KEY, api_secret=CB_API_SECRET,base_url="https://api-sandbox.coinbase.com/api/v3/brokerage/orders")
         self.accounts = self.client.get_accounts()
         print(dumps(accounts.to_dict(), indent=2))
     def order(self,symbol,side,quantity):
