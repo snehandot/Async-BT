@@ -1,7 +1,7 @@
 API_KEY = "kFKTjhE7BXfnO29MK2EeHFrkhGc7QDVCHYIyrj6MvAUiVns7swe4abgq6LHcmaMR"
 API_SECRET = "RCYkn1a1CSiARylQiCDwytCEkirCOzNTLDgeZSCl8e2sIBsiL0EuoSDVCPuIXkAa"
 SYMBOL = "BTCUSDT"
-TRADE_QTY = 0.000001
+TRADE_QTY = 0.01
 BASE_URL = "https://testnet.binance.vision/api"
-cb_api_key = "organizations/513bd119-1176-4e14-beb1-c450750560fc/apiKeys/b316dba3-cbdd-444f-8e2c-fafa798e0f92"
-cb_api_secret = "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIB0zq+spYZbm610stuigpakn4cyJWYnPHJGuXmX/hfVOoAoGCCqGSM49\nAwEHoUQDQgAEiN2Ul43D5FlmAi9/kLHdynlUNehSOBjbzXi+V9SoN8QmlSMg63jP\nLx6VO06O/DyQjEmLB1JWZ8+dBZgGwDypIQ==\n-----END EC PRIVATE KEY-----\n"
+CB_API_KEY = "organizations/513bd119-1176-4e14-beb1-c450750560fc/apiKeys/b316dba3-cbdd-444f-8e2c-fafa798e0f92"
+CB_API_SECRET = "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIB0zq+spYZbm610stuigpakn4cyJWYnPHJGuXmX/hfVOoAoGCCqGSM49\nAwEHoUQDQgAEiN2Ul43D5FlmAi9/kLHdynlUNehSOBjbzXi+V9SoN8QmlSMg63jP\nLx6VO06O/DyQjEmLB1JWZ8+dBZgGwDypIQ==\n-----END EC PRIVATE KEY-----\n"

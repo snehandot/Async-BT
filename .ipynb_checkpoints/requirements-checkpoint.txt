@@ -7,3 +7,7 @@ matplotlib
 keyboard
 ta
 mplfinance
+coinbase-advanced-py
+cryptography==42.0.5
+PyJWT==2.8.0
+aiohttp

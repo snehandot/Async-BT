@@ -2,31 +2,35 @@ import os
 import sys
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-from src.trading.exchange import Broker
+from src.trading.exchange import REST_Binance,SDK_Binance,REST_Coinbase
 from config.config import SYMBOL, TRADE_QTY
 
 class Strategy:
-    def __init__(self,whole_data):
+    def __init__(self,tick,session):
         # self.func=None
-        # self.symbol=SYMBOL
-        self.broker=Broker()
-        self.whole_data=whole_data
+        self.symbol=tick
+        self.session=session
+        self.broker=REST_Binance()
         self.pos=1
 
-    
-    @property #Because in the main class , self.data is called without ()
-    def data(self):
-        # self.Close=
-        self.Close=self.whole_data[:self.pos+1]
-        self.pos+=1
-        return self.Close
+
+    @property
+    async def data_1s(self):
+        df = await self.broker.fetch_ohlcv(symbol=self.symbol, interval="1s", limit=50,session=self.session)
+        return df
+    @property
+    async def data_1m(self):
+        df = await self.broker.fetch_ohlcv(symbol=self.symbol, interval="1m", limit=50,session=self.session)
+        return df
         
-    def buy(self,size=TRADE_QTY):
+    async def buy(self,size=TRADE_QTY):
         print(SYMBOL,size)
-        order=self.broker.order(SYMBOL,"BUY",size)
+        order = await self.broker.order(self.symbol,"BUY",size,self.session)
+        return
         
-    def sell(self,size=TRADE_QTY):
-        order=self.broker.order(SYMBOL,"SELL",size)
+    async def sell(self,size=TRADE_QTY):
+        order = await self.broker.order(self.symbol,"SELL",size,self.session)
+        return
     
     
 
